@@ -3,13 +3,13 @@ body {
 }
 
 .main-container{
-    border: 2px solid black;
     display: flex;
     flex-direction:column;
 }
 
 .search-entry {
-    border: 2px solid black;
+    margin-bottom: 2%;
+   
 }
 
 
@@ -22,7 +22,6 @@ body {
 
 
 .pic-box {
-    border: 2px solid black;
     display:flex;
     flex-direction:row;
     justify-content: space-evenly;

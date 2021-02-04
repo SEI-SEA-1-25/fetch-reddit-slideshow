@@ -12,7 +12,7 @@ let pageBody = document.querySelector('.main-container')
 function userSearch(event){
     event.preventDefault();
     changePic();
-    
+
     
     async function loadInfo() {
         let userQuery = searchBar.value
@@ -32,22 +32,16 @@ function userSearch(event){
             
         })
 
-
         randomUrl = filteredUrls[Math.floor(filteredUrls.length * Math.random())];
-
-            console.log(randomUrl)
 
         let picEl = document.createElement('img')
             picEl.src = randomUrl;
             mainImg.appendChild(picEl)
             
-           displayMsg.style.display = "none";
-        
+            displayMsg.style.display = "none";
             console.log(leftPicEl)
         
-        
     }
-
     loadInfo();
     
 }
@@ -59,7 +53,7 @@ function changePic() {
     }
  }
 
-document.addEventListener('click', changePic)
+
 
     
     //DOM Manipulation
