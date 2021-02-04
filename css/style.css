@@ -1,0 +1,51 @@
+body {
+  background-color: rgb(2, 2, 45);
+  /* background-size: cover;
+  background-repeat: no-repeat; */
+  /* -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover; */
+  /* background-size: contain;
+  background-repeat: no-repeat; */
+  display: block;
+  align-items: center;
+  justify-content: center;
+}
+div {
+  display: flexbox;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+#title {
+  color: rgb(177, 22, 22);
+
+  font-size: 100px;
+  margin-bottom: 0pt;
+}
+#kquote {
+  color: rgb(177, 22, 22);
+
+  font-size: 20px;
+  margin-bottom: 30pt;
+}
+
+img {
+  width: 90vw;
+  margin-top: 50pt;
+  border-radius: 20pt;
+}
+
+button {
+  border: none;
+  width: 100pt;
+  height: 30pt;
+  border-radius: 10pt;
+  background-color: rgb(177, 22, 22);
+  margin-top: 30pt;
+  /* margin-left: 30vw; */
+  align-self: center;
+  margin: 0pt;
+  font-weight: bold;
+  font-size: 15px;
+}
