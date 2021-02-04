@@ -13,24 +13,29 @@ async function fetchPictures(event) {
     `http://www.reddit.com/search.json?q=${search}+nsfw:no`
   );
   const content = await response.json();
-  //clear();
+  clear();
   let posts = content.data.children;
   console.log(posts);
-  function randomPost(post) {
-    return post[Math.floor(Math.random() * post.length)];
-  }
-  let newPost = randomPost(posts);
-  let picture = newPost.data.url;
-  let lastFourChars = picture.substring(picture.length - 4, picture.length);
-  if (
-    lastFourChars === ".jpg" ||
-    lastFourChars === ".gif" ||
-    lastFourChars === ".png"
-  ) {
-    let create = document.createElement("img");
-    create.src = picture;
-    document.querySelector("#picture-container").appendChild(create);
-  }
+  let mapPosts = posts.map(function (children) {
+    return children.data.url;
+  });
+
+  let filterPosts = mapPosts.filter(function (url) {
+    let lastFourChars = url.substring(url.length - 4, url.length);
+    if (
+      lastFourChars === ".jpg" ||
+      lastFourChars === ".gif" ||
+      lastFourChars === ".png"
+    ) {
+      return true;
+    }
+  });
+
+  console.log(filterPosts);
+
+  let create = document.createElement("img");
+  create.src = picture;
+  document.querySelector("#picture-container").appendChild(create);
 }
 
 // catch (err) {
