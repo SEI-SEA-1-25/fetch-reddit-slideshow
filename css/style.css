@@ -1,0 +1,12 @@
+h1 {
+  color: purple;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: blue;
+}
+img {
+  max-width: 400px;
+}
