@@ -1,52 +1,78 @@
-const redditUrl = "http://www.reddit.com/search.json?q=cats+nsfw:no";
-const searchForm = document.getElementById("searchBar")
-const submit = document.getElementById("searchButton")
+const TIMER_SPEED = 1000
+let slideshowInterval = null
+let images = []
+let imageIndex = 0
+
+const SUBMIT_INPUT = document.getElementById("searchButton")
+
+const redditUrl = "http://www.reddit.com/search.json?q=";
+
+
 let mainContainer = document.querySelector('#main-container')
 
 
 
+// Fetch user query from reddit
+const fetchReddit = (event) => {
+    event.preventDefault()
+
+    const searchForm = document.getElementById("searchBar").value
+
+    if (searchForm) {
+        fetch(redditUrl + searchForm)
+            .then((redditData) => {
+                return redditData.json()
+            })
+            .then((jsonData) => {
+                let data = jsonData.data.children;
+                img = data.map(function (child) {
+                    return {
+                        url: child.data.url,
+                        title: child.data.title,
+                    }
+
+                })
+                images = img.filter(function (image) {
+                    const fileExtension = img.url.slice(-4)
+                    if (fileExtension === '.jpg' || fileExtension === '.png') return true
+                    return false
+                })
+                console.log(img)
+            })
 
 
-fetch(redditUrl)
-    .then((redditData) => {
-        return redditData.json();
-    })
-    .then((jsonData) => {
+    }
+}
 
 
-        let data = jsonData.data.children;
-        let randomData = data[Math.floor(Math.random() * data.length)];
+const createSlideshow = () => {
+    if (imageIndex >= images.length) imageIndex = 0
+    const imgEl = document.createElement('img')
+    imgEl.src = images[imageIndex].url
+    imgEl.alt = images[imageIndex].title
 
-        let title = randomData.data.title;
-        let thumbnail = randomData.data.thumbnail;
+    SLIDESHOW_CONTAINER.appendChild(imgEl)
+    imageIndex++
+}
 
-
-
-        // let img = document.createElement(thumbnail);
-        // mainContainer.innerText(img)
-
-        // let img = document.createElement('img');
-        // mainContainer.appendChild(img)
-
-        // img.src =
+createSlideshow()
 
 
-        mainContainer.innerText = title;
 
 
-        mainContainer.appendChild(thumbnail)
-    })
 
-// const createData = (data) => {
-//     let div = document.createElement('div')
-//     let h2El = document.createElement('h2')
-//     h2El.textContent = data;
-//     div.appendChild(h2El)
+// let img = document.createElement(thumbnail);
+// mainContainer.innerText(img)
 
-//     return div
-// }
+// let img = document.createElement('img');
+// mainContainer.appendChild(img)
 
-// createData()
+// img.src =
+
+
+
+
+
 
 
 
