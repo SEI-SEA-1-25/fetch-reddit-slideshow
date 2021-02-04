@@ -5,6 +5,8 @@ async function testData() {
   const response = await fetch("https://www.reddit.com/r/cats/.json");
 
   const data = await response.json();
+
+  //testdata below
   test.innerText = data.data.children[0].data.title;
 }
 testButton.addEventListener("click", testData);
