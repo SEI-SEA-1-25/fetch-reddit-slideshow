@@ -2,6 +2,7 @@ let form = document.querySelector("#form");
 let inputText = document.querySelector("#text");
 let inputButton = document.querySelector("#button");
 let galleryEl = document.querySelector("#picture-container");
+let remove = document.querySelector("#remove");
 
 form.addEventListener("submit", fetchPictures);
 
@@ -34,16 +35,33 @@ async function fetchPictures(event) {
   console.log(filterPosts);
 
   let create = document.createElement("img");
-  create.src = picture;
+  create.src = filterPosts[0];
   document.querySelector("#picture-container").appendChild(create);
-}
+  function removeForm() {
+    remove.removeChild(form);
+  }
+  removeForm();
 
-// catch (err) {
-//     clear();
-//     console.log("oh noooo");
-//   }
+  replaceForm();
+}
+function replaceForm() {
+  let newForm = document.createElement("form");
+  newForm.id = "new-form";
+  let stopButton = document.createElement("button");
+  stopButton.id = "stop";
+  stopButton.type = "submit";
+  stopButton.innerText = "Stop";
+  newForm.appendChild(stopButton);
+  remove.appendChild(newForm);
+}
 function clear() {
   while (galleryEl.firstChild) {
     galleryEl.removeChild(galleryEl.firstChild);
   }
 }
+
+//function slide () {}
+// catch (err) {
+//     clear();
+//     console.log("oh noooo");
+//   }
