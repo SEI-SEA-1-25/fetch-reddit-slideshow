@@ -1,11 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hello Front-End</title>
-</head>
-<body>
-  <h1>Hello Front-End</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Redditulous</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer src="js/app.js"></script>
+  </head>
+  <body>
+    <h1>Redditulous</h1>
+    <h3>See a rotating smorgasbord of pics related to your query</h3>
+    <div id="form-container">
+      <form id="search-form">
+        <input id="input" type="text" />
+        <input id="submit" type="submit" value="Submit to Reddit"/>
+      </form>
+      <div>
+        <button id="stop-button" type="button">STOP THE MADNESS</button>
+      </div>
+      <div id="post-container"></div>
+    </div>
+  </body>
 </html>
