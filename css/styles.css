@@ -22,3 +22,6 @@ span#meleft {
     display: flex;
     justify-content: flex-end;
 }
+span#medown{
+    display: block;
+}
