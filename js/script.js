@@ -31,7 +31,7 @@ document.querySelector("form").addEventListener("submit", (e)=>{
                 title.innerText = fetchArr[i].data.title;
             }
 
-            //loop over array to get image
+            //loop over array to get slideshow image
 
             for (let i = 0; i < fetchArr.length; i++){
                 image.src = fetchArr[i].data.thumbnail;
