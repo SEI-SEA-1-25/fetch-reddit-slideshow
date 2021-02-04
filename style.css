@@ -1,0 +1,41 @@
+body {
+    text-align: center;
+}
+
+.main-container{
+    display: flex;
+    flex-direction:column;
+}
+
+.search-entry {
+    margin-bottom: 2%;
+   
+}
+
+
+.message {
+ font-size: xx-large;
+ font-family: 'Architects Daughter', cursive;
+ text-align: center;
+}
+
+
+
+.pic-box {
+    display:flex;
+    flex-direction:row;
+    justify-content: space-evenly;
+}
+
+#main-img {
+    max-width: 65%;
+    max-height: auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+img {
+    width: 85%;
+    height: auto;
+}
+
