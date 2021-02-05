@@ -1,0 +1,27 @@
+.mered{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top:250px;
+}
+input#serve {
+    width: 400px;
+    height: 70px;
+    color: #000;
+}
+input#searchme {
+    width: 170px;
+    height: 36px;
+    display: flex;
+    margin-top: 10px;
+    justify-content: center;
+    align-items: center;
+}
+span#meleft {
+    display: flex;
+    justify-content: flex-end;
+}
+span#medown{
+    display: block;
+}
